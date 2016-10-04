@@ -21,4 +21,5 @@ def my_form_post():
     data= json.dumps(data, indent=4, sort_keys=True)
     return app.response_class(data, content_type='application/json')
 if __name__ == '__main__':
-    app.run()
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host='0.0.0.0', port=port)
