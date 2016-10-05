@@ -23,7 +23,8 @@ def my_form_post():
     line3= data['pollingLocations'][0]['address']['locationName']
     line4= data['pollingLocations'][0]['address']['state']
     line5= data['pollingLocations'][0]['pollingHours']
-    return app.response_class(line1,line2,line3,line4,line5)
+    final=u''.join("<p>%s</p><p> %s</p><p> %s</p><p> %s</p><p> %s</p>" % (line1, line2, line3, line4, line5)).replace('[',' ').replace(']',' ')
+    return render_template('myform.html', final)
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 5000))
     app.run(host='0.0.0.0', port=port)

@@ -19,6 +19,12 @@ params = dict(
 
 resp = requests.get(url=url, params=params)
 data = json.loads(resp.text)
-print data['pollingLocations'][0]['pollingHours']
+line1= data['pollingLocations'][0]['address']['city']
+line2= data['pollingLocations'][0]['address']['line1']
+line3= data['pollingLocations'][0]['address']['locationName']
+line4= data['pollingLocations'][0]['address']['state']
+line5= data['pollingLocations'][0]['pollingHours']
+final=u''.join("<p>%s<p> %s<p> %s<p> %s<p> %s<p>" % (line1, line2, line3, line4, line5)).replace('[',' ').replace(']',' ')
+print (final)
 
 
