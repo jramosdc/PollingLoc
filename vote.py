@@ -18,8 +18,13 @@ def my_form_post():
     params = dict(address= coord, electionId='2000',fields='dropOffLocations,earlyVoteSites,normalizedInput,pollingLocations',key='AIzaSyAzNEkhYYRuLAgVU2ghn1LY9ulanWBd1x0')
     resp = requests.get(url=url, params=params)
     data = json.loads(resp.text)
-    data= json.dumps(data, indent=4, sort_keys=True)
-    return app.response_class(data, content_type='application/json')
+    data= json.dumps(data)
+    line1= data['pollingLocations']['address']['city']
+    line2= data['pollingLocations']['address']['line1']
+    line3= data['pollingLocations']['address']['locationName']
+    line4= data['pollingLocations']['address']['state']
+    line5= data['pollingLocations']['pollingHours']
+    return app.response_class(line1,line2,line3,line4,line5)
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 5000))
     app.run(host='0.0.0.0', port=port)
