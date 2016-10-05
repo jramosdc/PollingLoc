@@ -11,14 +11,14 @@ coord= "{},{},{}".format(location['city'],location['region_code'],location['zip_
 url = 'https://www.googleapis.com/civicinfo/v2/voterinfo'
 
 params = dict(
-    address= coord,
+    address= '1112+West+Ave,+Richmond,+VA+23220',
     electionId='2000',
-   
+    fields='dropOffLocations,earlyVoteSites,normalizedInput,pollingLocations',
     key='AIzaSyAzNEkhYYRuLAgVU2ghn1LY9ulanWBd1x0'
 )
 
 resp = requests.get(url=url, params=params)
 data = json.loads(resp.text)
-print json.dumps(data, indent=4, sort_keys=True)
+print data['pollingLocations'][0]['pollingHours']
 
 
