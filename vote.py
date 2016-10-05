@@ -17,8 +17,7 @@ def my_form_post():
     url = 'https://www.googleapis.com/civicinfo/v2/voterinfo'
     params = dict(address= coord, electionId='2000',fields='dropOffLocations,earlyVoteSites,normalizedInput,pollingLocations',key='AIzaSyAzNEkhYYRuLAgVU2ghn1LY9ulanWBd1x0')
     resp = requests.get(url=url, params=params)
-    data = json.loads(resp.text)
-    data= json.dumps(data)
+    data = json.loads(resp)
     line1= data['pollingLocations']['address']['city']
     line2= data['pollingLocations']['address']['line1']
     line3= data['pollingLocations']['address']['locationName']
