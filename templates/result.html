@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<head>
+<meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+<script src='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.js'></script> 
+<link href='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.css' rel='stylesheet' />
 <style>
 #map-canvas{
   height: 400px;
@@ -23,7 +26,7 @@
 .container {
     padding: 2px 16px;
 }
-</style>
+</style></head>
   <body>
     <div class="card">
     <img src="https://cdn2.iconfinder.com/data/icons/ios-7-style-metro-ui-icons/512/Flurry_Google_Maps.png" alt="Avatar" style="width:200px">
@@ -38,16 +41,9 @@
   </div>
 
 <script>
-var map;
-function initMap() {
-  map = new google.maps.Map(document.getElementById('map-canvas'), {
-    center: {lat: {{latpol}}, lng: {{longpol}}},
-    zoom: 17
-  });
-}
+L.mapbox.accessToken = '<your access token here>';
+var map = L.mapbox.map('map', 'mapbox.streets')
+    .setView([{{latpol}},{{longpol}}], 15);
 </script>
-<script async defer
-    src="https://maps.googleapis.com/maps/api/js?v=3
-        &key=AIzaSyAognIiJ-g-aZFj9kDb0mj49hNx4TrbrWk&callback=initMap">
   </body>
 </html>
