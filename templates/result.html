@@ -39,25 +39,12 @@
 
 <script>
 var map;
-
-function initialize() {
-  var myLatlng = new google.maps.LatLng({{latpol}},{{longpol}});
-  var mapOptions = {
-    zoom: 17,
-    center: myLatlng
-  };
-  map = new google.maps.Map(document.getElementById('map-canvas'),
-      mapOptions);
-  
-  var marker = new google.maps.Marker({
-    position: myLatlng,
-    map: map,
-    title: 'YOUR NEAREST POLLING LOCATION'
+function initMap() {
+  map = new google.maps.Map(document.getElementById('map-canvas'), {
+    center: {lat: {{latpol}}, lng: {{longpol}}},
+    zoom: 17
   });
-  
 }
-
-google.maps.event.addDomListener(window, 'load', initialize);
 </script>
 <script async defer
     src="https://maps.googleapis.com/maps/api/js?v=3
