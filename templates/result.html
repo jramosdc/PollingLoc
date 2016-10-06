@@ -5,7 +5,7 @@
 <script src='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.js'></script> 
 <link href='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.css' rel='stylesheet' />
 <style>
-#map-canvas{
+#map{
   height: 400px;
   width: 400px;
   border: 3px solid blue;
@@ -37,11 +37,11 @@
     <p><span>{{line1}}</span><span>,{{line4}}</span></p>
     <p>Open: <span>{{line5}}</span></p>
   </div>
-  <div id="map-canvas"> </div>
+  <div id="map"> </div>
   </div>
 
 <script>
-L.mapbox.accessToken = '<your access token here>';
+L.mapbox.accessToken = 'pk.eyJ1IjoiamFpcm82OTUiLCJhIjoidU9TZEJVNCJ9.7b7ioBVfIc2dpnWo84JiIg';
 var map = L.mapbox.map('map', 'mapbox.streets')
     .setView([{{latpol}},{{longpol}}], 15);
 </script>
