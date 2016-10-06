@@ -17,7 +17,7 @@ def my_form_post():
 
     coord = request.form['coordinates']
     # gkeys
-    gmaps = googlemaps.Client(key='AIzaSyDOglPws4TcoEFJ8O4gTYl9Pst-KFjsD8E')
+    gmaps = googlemaps.Client(key='AIzaSyBeGwaOHTzvL0S6JR3uLqHqTrf0-lzCYwo')
     gdirect=googlemaps.Client(key='AIzaSyB0mTgf48aoIjhLaKVVLqJY_rT0n72nzDE')
     #get voting info from civic info as data var
     url = 'https://www.googleapis.com/civicinfo/v2/voterinfo'
