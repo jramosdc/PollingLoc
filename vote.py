@@ -45,7 +45,7 @@ def my_form_post():
     directions = gdirect.directions(coord, polloc)
     walk = directions[0]['legs']
     distance= walk[0]['distance']['text']
-    return render_template('result.html', line1=line1,line2=line2,line3=line3,line4=line4,line5=line5,distance=distance,latpol=latpol,longpol=longpol)
+    return render_template('result.html', line1=line1,line2=line2,line3=line3,line4=line4,line5=line5,distance=distance,latpol=latpol,longpol=longpol, latitude=latitude,longitude=longitude)
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 5000))
     app.run(host='0.0.0.0', port=port)
