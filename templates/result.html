@@ -38,23 +38,13 @@
   </div>
 
 <script>
-// if HTML DOM Element that contains the map is found...
-if (document.getElementById('map-canvas')){
- 
-    // Coordinates to center the map
-    var myLatlng = new google.maps.LatLng({{latpol}},{{longpol}});
- 
-    // Other options for the map, pretty much selfexplanatory
-    var mapOptions = {
-        zoom: 14,
-        center: myLatlng,
-        mapTypeId: google.maps.MapTypeId.ROADMAP
-    };
- 
-    // Attach a map to the DOM Element, with the defined settings
-    var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
-
-}
+      var map;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map-canvas'), {
+          center: {lat: {{latpol}}, lng: {{longpol}},
+          zoom: 8
+        });
+      }
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDotMYxs9Y01nB50Tp1f_pDaXsRggJaWKA&callback=initMap"
     async defer></script>
