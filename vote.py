@@ -42,7 +42,7 @@ def my_form_post():
     location = geocode_result[0]['geometry']['location']
     latpol, longpol = location['lat'], location['lng']
     # Find distance
-    directions = gdirect.directions(address, polloc)
+    directions = gdirect.directions(coord, polloc)
     walk = directions[0]['legs']
     distance= walk[0]['distance']['text']
     return render_template('result.html', line1=line1,line2=line2,line3=line3,line4=line4,line5=line5,distance=distance,latpol=latpol,longpol=longpol)
