@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+<script src="http://code.jquery.com/jquery-1.4.4.min.js"></script>
 <style>
+#map{
+  height: 400px;
+  width: 400px;
+  border: 3px solid blue;
+}
+
 .card {
     /* Add shadows to create the "card" effect */
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -21,11 +29,33 @@
     <div class="card">
     <img src="https://cdn2.iconfinder.com/data/icons/ios-7-style-metro-ui-icons/512/Flurry_Google_Maps.png" alt="Avatar" style="width:200px">
     <div class="container">
+    <h3>{{distance}}</h3>
     <h4>{{line3}}</h4>
     <p><b>{{line2}}</b></p>
     <p><span>{{line1}}</span><span>,{{line4}}</span></p>
     <p>Open: <span>{{line5}}</span></p>
   </div>
+  <div id="map"> </div>
   </div>
+
+<script>
+// if HTML DOM Element that contains the map is found...
+if (document.getElementById('map')){
+ 
+    // Coordinates to center the map
+    var myLatlng = new google.maps.LatLng({{latpol}},{{longpol}});
+ 
+    // Other options for the map, pretty much selfexplanatory
+    var mapOptions = {
+        zoom: 14,
+        center: myLatlng,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+ 
+    // Attach a map to the DOM Element, with the defined settings
+    var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+
+}
+</script>
   </body>
 </html>
