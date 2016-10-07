@@ -42,13 +42,14 @@
 
 <script>
 L.mapbox.accessToken = 'pk.eyJ1IjoiamFpcm82OTUiLCJhIjoidU9TZEJVNCJ9.7b7ioBVfIc2dpnWo84JiIg';
-var mapLeaflet = L.mapbox.map('map', 'mapbox.light')
-  .setView([{{latpol}},{{longpol}}], 12);
+var mapLeaflet = L.mapbox.map('map', 'mapbox.streets')
+  .setView([{{latpol}},{{longpol}}], 15);
 
-L.marker([{{latpol}},{{longpol}}]).addTo(mapLeaflet);
-L.marker([{{latitude}},{{longitude}}]).addTo(mapLeaflet);
+L.marker([{{latpol}},{{longpol}}]).bindPopup('Polling Place').addTo(mapLeaflet);
+L.marker([{{latitude}},{{longitude}}]).bindPopup('Your Address').addTo(mapLeaflet);
 
 mapLeaflet.scrollWheelZoom.disable();
 </script>
+
   </body>
 </html>
