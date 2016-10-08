@@ -20,7 +20,7 @@ def my_form():
 @app.route('/', methods=['POST'])
 def my_form_post():
 
-    coord = request.form['javascript_data']
+    coord = request.form['coordinates']
     # gkeys
     gmaps = googlemaps.Client(key='AIzaSyBeGwaOHTzvL0S6JR3uLqHqTrf0-lzCYwo')
     gdirect=googlemaps.Client(key='AIzaSyB0mTgf48aoIjhLaKVVLqJY_rT0n72nzDE')

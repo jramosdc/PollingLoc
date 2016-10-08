@@ -10,7 +10,7 @@
 <button class="pure-button pure-button-primary">Get my location</button>
 <div class="result"></div>
 <h1>If not find by address</h1>
-    <form action="." method="POST">
+    <form action="." method="POST" id="where">
         <input type="text" name="coordinates">
         <input type="submit" name="my-form" value="Get Polling Location!">
     </form>
@@ -59,8 +59,8 @@ function getLocation(){
       var lng = pos.coords.longitude;
       var lat = pos.coords.latitude;
       // and presto, we have the device's location!
-      $.post( "/", {javascript_data: lng + ',' + lat });
-      
+      var data= lng + ',' + lat;
+      $('#where').val(data); 
     }
   
     // upon error, do this
