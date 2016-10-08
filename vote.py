@@ -8,10 +8,10 @@ import googlemaps
 
 app = Flask(__name__)
 
-@app.route('/', methods = ['POST'])
-def get_post_javascript_data():
-    jsdata = request.form['javascript_data']
-    return jsdata
+#@app.route('/', methods = ['POST'])
+#def get_post_javascript_data():
+#    jsdata = request.form['javascript_data']
+#    return jsdata
 
 @app.route('/')
 def my_form():
@@ -20,7 +20,7 @@ def my_form():
 @app.route('/', methods=['POST'])
 def my_form_post():
 
-    coord = request.form['coordinates']
+    coord = request.form['javascript_data']
     # gkeys
     gmaps = googlemaps.Client(key='AIzaSyBeGwaOHTzvL0S6JR3uLqHqTrf0-lzCYwo')
     gdirect=googlemaps.Client(key='AIzaSyB0mTgf48aoIjhLaKVVLqJY_rT0n72nzDE')
