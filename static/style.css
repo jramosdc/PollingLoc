@@ -1,6 +1,6 @@
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400);
 @import url(//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css);
-@import url(http://yui.yahooapis.com/pure/0.3.0/pure-min.css);
+@import url(https://yui.yahooapis.com/pure/0.3.0/pure-min.css);
 
 html{
   background: #222;
@@ -29,10 +29,7 @@ button{
 .result{
   margin: 2em 2em 1em 2em;
 }
-.result img{
-  margin-top: 1em;
-  border: 1px solid #333; 
-}
+
 .fa-spinner{
   font-size: 3em;
 }
