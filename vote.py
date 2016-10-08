@@ -8,6 +8,11 @@ import googlemaps
 
 app = Flask(__name__)
 
+@app.route('/', methods = ['POST'])
+def get_post_javascript_data():
+    jsdata = request.form['javascript_data']
+    return jsdata
+
 @app.route('/')
 def my_form():
     return render_template("myform.html")
