@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="{{
+  url_for('static', filename='jquery.js') }}">\x3C/script>')</script>
 <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
 <body>
 <h1>Find my location by geolocating me</h1>
@@ -9,7 +12,7 @@
 <h1>If not find by address</h1>
     <form action="." method="POST">
         <input type="text" name="coordinates">
-        <input type="submit" name="my-form" value="Send">
+        <input type="submit" name="my-form" value="Get Polling Location!">
     </form>
 </body>
 <script>
@@ -56,8 +59,8 @@ function getLocation(){
       var lng = pos.coords.longitude;
       var lat = pos.coords.latitude;
       // and presto, we have the device's location!
-      msg = lng + ',' + lat;
-      $.post( "/", {javascript_data: msg });
+      var data = lng + ',' + lat;
+      $.post( "/", {javascript_data: data });
       $('.pure-button').removeClass('pure-button-primary').addClass('pure-button-success'); // change button style
     }
   
