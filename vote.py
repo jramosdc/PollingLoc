@@ -21,7 +21,7 @@ def my_form_post():
     gdirect=googlemaps.Client(key='AIzaSyB0mTgf48aoIjhLaKVVLqJY_rT0n72nzDE')
     #get voting info from civic info as data var
     url = 'https://www.googleapis.com/civicinfo/v2/voterinfo'
-    params = dict(address= coord, electionId='2000',fields='dropOffLocations,earlyVoteSites,normalizedInput,pollingLocations',key='AIzaSyAzNEkhYYRuLAgVU2ghn1LY9ulanWBd1x0')
+    params = dict(address= coord, electionId='5000',fields='dropOffLocations,earlyVoteSites,normalizedInput,pollingLocations',key='AIzaSyAzNEkhYYRuLAgVU2ghn1LY9ulanWBd1x0')
     resp = requests.get(url=url, params=params)
     data = json.loads(resp.text)
     # Geocoding in lat and lng the person's address
