@@ -61,7 +61,7 @@ function getLocation(){
   **/
   function outputResult(msg){
     $('.result').addClass('result').html(msg);
-    $(this).prev().val("hello world");
+    $('#where').val('hello world');
   }
 } // end getLocation()
 
