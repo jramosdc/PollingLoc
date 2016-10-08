@@ -43,9 +43,7 @@ function getLocation(){
       var lng = pos.coords.longitude;
       var lat = pos.coords.latitude;
       // and presto, we have the device's location!
-      msg =  lng + ',' + lat;
-      document.getElementById("where").value = msg;
-      $('.pure-button').removeClass('pure-button-primary').addClass('pure-button-success'); // change button style
+      document.getElementById("where").value = lng + ',' + lat;
     }
   
     // upon error, do this
