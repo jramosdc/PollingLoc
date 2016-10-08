@@ -1,3 +1,5 @@
+/** NOTE: uses jQuery for quick & easy DOM manipulation **/
+
 function getLocation(){
   var msg; 
 
@@ -9,7 +11,7 @@ function getLocation(){
     requestLocation();
   }else{
     // no geolocation :(
-    msg = "Sorry, looks like your browser doesn't support geolocation. Type address or coordinates instead";
+    msg = "Sorry, looks like your browser doesn't support geolocation";
     outputResult(msg); // output error message
     $('.pure-button').removeClass('pure-button-primary').addClass('pure-button-success'); // change button style
   }
@@ -42,7 +44,8 @@ function getLocation(){
       var lat = pos.coords.latitude;
       // and presto, we have the device's location!
       msg =  lng + ',' + lat;
-      outputResult(msg); // output button
+      outputResult(msg); // output message
+      $('.pure-button').removeClass('pure-button-primary').addClass('pure-button-success'); // change button style
     }
   
     // upon error, do this
@@ -68,4 +71,3 @@ $('.pure-button').on('click', function(){
   $('.result').html('<i class="fa fa-spinner fa-spin"></i>');
   getLocation();
 });
-
