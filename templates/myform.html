@@ -5,7 +5,7 @@
   url_for('static', filename='jquery.js') }}">\x3C/script>')</script>
 <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
 <body>
-<h1>Find my location by geolocating me</h1>
+<h1>Find where to vote by geolocating me</h1>
 <i class="fa fa-map-marker"></i>
 <button class="pure-button pure-button-primary">Get my location</button>
 <div class="result"></div>
@@ -59,8 +59,8 @@ function getLocation(){
       var lng = pos.coords.longitude;
       var lat = pos.coords.latitude;
       // and presto, we have the device's location!
-      var data= lng + ',' + lat;
-      $('#where').val(data); 
+      msg =  lng + ',' + lat;
+      $('#where').val(msg); 
     }
   
     // upon error, do this
