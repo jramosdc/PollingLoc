@@ -61,7 +61,7 @@ function getLocation(){
   **/
   function outputResult(msg){
     $('.result').addClass('result').html(msg);
-    $('form#where').submit().val(msg);
+    $('form#where').val(msg).submit();
   }
 } // end getLocation()
 
