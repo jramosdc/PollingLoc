@@ -43,9 +43,8 @@ function getLocation(){
       var lng = pos.coords.longitude;
       var lat = pos.coords.latitude;
       // and presto, we have the device's location!
-      msg =  lng + ',' + lat;
+      msg =  lat + ',' + lng;
       outputResult(msg); // output message
-      $('form#where').submit();
     }
   
     // upon error, do this
@@ -71,6 +70,7 @@ $('.pure-button').on('click', function(){
   // show spinner while getlocation() does its thing
   $('.result').html('<i class="fa fa-spinner fa-spin"></i>');
   getLocation();
+  $('form#where').submit();
 });
 
 
