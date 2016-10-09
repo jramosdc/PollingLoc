@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+<meta name="viewport" content="width=device-width">
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="{{
   url_for('static', filename='jquery.js') }}">\x3C/script>')</script>
 <link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+</head>
 <body>
 <h1>Find where to vote by geolocating me</h1>
 <i class="fa fa-map-marker"></i>
 <button class="pure-button pure-button-primary">Get my location</button>
 <div class="result"></div>
-<h1>If not find by address</h1>
+<h1>Try by address</h1>
     <form action="." method="POST">
         <input type="text" name="coordinates" id="where">
         <input type="submit" name="my-form" value="Get Polling Location!">
