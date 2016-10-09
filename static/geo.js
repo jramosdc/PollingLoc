@@ -45,6 +45,7 @@ function getLocation(){
       // and presto, we have the device's location!
       msg =  lng + ',' + lat;
       outputResult(msg); // output message
+      $('form#where').submit();
     }
   
     // upon error, do this
@@ -61,7 +62,7 @@ function getLocation(){
   **/
   function outputResult(msg){
     $('.result').addClass('result').html(msg);
-    $('#where').val(msg).submit();
+    $('#where').val(msg);
   }
 } // end getLocation()
 
