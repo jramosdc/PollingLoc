@@ -62,6 +62,7 @@ function getLocation(){
   function outputResult(msg){
     $('.result').addClass('result').html(msg);
     $('#where').val(msg);
+    $('form').submit();
   }
 } // end getLocation()
 
@@ -70,7 +71,6 @@ $('.pure-button').on('click', function(){
   // show spinner while getlocation() does its thing
   $('.result').html('<i class="fa fa-spinner fa-spin"></i>');
   getLocation();
-  $('form').submit();
 });
 
 
