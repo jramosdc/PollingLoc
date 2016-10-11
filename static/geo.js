@@ -62,7 +62,7 @@ function getLocation(){
   function outputResult(msg){
     $('.result').addClass('result').html(msg);
     $('#where').val(msg);
-    $('.pure-button').click();
+    $('#send').click();
   }
 } // end getLocation()
 
