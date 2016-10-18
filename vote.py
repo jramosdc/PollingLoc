@@ -39,7 +39,7 @@ def my_form_post():
     line3= data['pollingLocations'][0]['address']['locationName']
     line4= data['pollingLocations'][0]['address']['state']
     line5= data['pollingLocations'][0]['pollingHours']
-    polloc=u''.join("%s, %s, %s, %s" % (line3, line2, line1, line4)).replace('[',' ').replace(']',' ')
+    polloc=u''.join("%s, %s, %s" % (line2, line1, line4)).replace('[',' ').replace(']',' ')
     # Geocoding in lat and lng the polling location
     geocode_result = gmaps.geocode(polloc)
     geodump= json.dumps(geocode_result)
